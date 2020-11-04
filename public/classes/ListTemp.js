@@ -1,3 +1,4 @@
+import { position } from "./../app.js";
 export class ListTemplate {
     constructor(container) {
         this.container = container;
@@ -10,7 +11,7 @@ export class ListTemplate {
         const p = document.createElement("p");
         p.innerText = item.format(); // 
         li.append(p);
-        if (pos === "start") {
+        if (pos == position.start) {
             this.container.prepend(li); // start
         }
         else {

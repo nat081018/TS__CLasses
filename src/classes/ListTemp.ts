@@ -1,10 +1,13 @@
 import { HasFormat } from './../interfaces/HasFormater';
+import {position} from  "./../app.js"
+
+
 
 export class ListTemplate {
 
     constructor(private container: HTMLUListElement) {}
 
-    render(item: HasFormat, heading: string, pos: "start" | "end") {
+    render(item: HasFormat, heading: string, pos: position.start | position.end) {
         const li = document.createElement("li")
 
         const h4 = document.createElement("h4")
@@ -16,7 +19,7 @@ export class ListTemplate {
 
         li.append(p)
 
-        if(pos === "start") {
+        if(pos == position.start) {
             this.container.prepend(li) // start
         }else{
             this.container.append(li) // end
